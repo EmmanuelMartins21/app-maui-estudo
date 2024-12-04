@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_maui_estudo.Views.Pages.Login"
+             BackgroundColor="Transparent">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#ADD8E6" Offset="0.0" />
+            <!-- Azul Claro -->
+            <GradientStop Color="#4682B4" Offset="1.0" />
+            <!-- Azul Médio -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+            <!-- Logo -->
+            <Image Source="logo.png"
+                   HeightRequest="100"
+                   HorizontalOptions="Center" />
+
+            <!-- Título -->
+            <Label Text="HIDRATOU-SE"
+                   FontSize="Title"
+                   TextColor="White"
+                   HorizontalOptions="Center" 
+                   Margin="0,10,0,20" />
+
+            <!-- Caixa de Texto: Email -->
+            <Frame BackgroundColor="WhiteSmoke"
+                   CornerRadius="10"
+                   Padding="0"
+                   HeightRequest="50"
+                   HorizontalOptions="Fill">
+                <Entry x:Name="txt_email"  Placeholder="Email"
+                       Keyboard="Email"
+                       PlaceholderColor="#D3D3D3"
+                       TextColor="Gray"
+                       BackgroundColor="Transparent"
+                       Margin="10,0" />
+            </Frame>
+
+            <!-- Caixa de Texto: Senha -->
+            <Frame BackgroundColor="WhiteSmoke"
+                   CornerRadius="10"
+                   Padding="0"
+                   HeightRequest="50"
+                   HorizontalOptions="Fill">
+                <Entry x:Name="txt_senha" Placeholder="Senha"
+                       IsPassword="True"
+                       PlaceholderColor="#D3D3D3"
+                       TextColor="Gray"
+                       BackgroundColor="Transparent"
+                       Margin="10,0" />
+            </Frame>
+
+            <!-- Botão Login -->
+            <Button Text="Entrar"
+                    TextColor="White"
+                    BackgroundColor="#4682B4"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    HorizontalOptions="Fill"
+                    Clicked="Button_Clicked" />
+
+                <!-- Link para cadastro -->
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,20,0,0">
+                    <Label Text="Não tem uma conta?"
+                       TextColor="#D3D3D3" />
+                    <Label Text="Cadastre-se"
+                       TextColor="#B0C4DE"
+                       FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToSignUpCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

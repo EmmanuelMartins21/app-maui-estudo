@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_maui_estudo.Views.Pages.ProtegidaPrincipal"
+             Title="ProtegidaPrincipal">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#ADD8E6" Offset="0.0" />
+            <!-- Azul Claro -->
+            <GradientStop Color="#4682B4" Offset="1.0" />
+            <!-- Azul Médio -->
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+           
+            <!-- Mensagem de Boas-Vindas -->
+            <Label Text="Bem-vindo"
+                   FontSize="26"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            
+            <Label x:Name="txt_usuario"
+                   FontSize="26"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Mensagem adicional -->
+            <Label Text="Estamos felizes em tê-lo conosco. Aproveite ao máximo o nosso app!"
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,10,0,20" />
+
+            <AbsoluteLayout>
+                <!-- Botão Flutuante -->
+                <Button x:Name="btnSair"
+                        ImageSource="icon_logout.png"
+                        BackgroundColor="#4682B4"
+                        TextColor="White"
+                        FontSize="24"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        CornerRadius="30" 
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                        Clicked="btnSair_Clicked"/>
+            </AbsoluteLayout>
+            <!-- <AbsoluteLayout>
+                <components:BotaoFlutuante
+                HorizontalOptions="End"
+                VerticalOptions="End"/> 
+            </AbsoluteLayout>-->
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>
