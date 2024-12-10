@@ -40,10 +40,16 @@ public static class Utils
                 Email = "lucas.lima@email.com",
                 Senha = "senha202",
                 Ativo = true
+            },new Usuario
+            {
+                Nome = "ADM MASTER",
+                Email = "admin",
+                Senha = "admin",
+                Ativo = true
             }
         };
 
 
     public static List<Usuario> RetornarUsuariosDisponiveis() => usuarios;
-    public static string RetornarNomeUsuario(string email) => usuarios.Find(x => x.Email == email).Nome ?? string.Empty;
+    public static string RetornarNomeUsuario(string email) => usuarios.Find(x => x.Email == (email ?? string.Empty)).Nome ?? string.Empty;
 }

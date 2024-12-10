@@ -28,5 +28,14 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>App needs access to your location for displaying maps.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>App needs access to your location for displaying maps.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>O aplicativo precisa acessar suas fotos.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>O aplicativo precisa salvar fotos no armazenamento.</string>
+
 </dict>
 </plist>
