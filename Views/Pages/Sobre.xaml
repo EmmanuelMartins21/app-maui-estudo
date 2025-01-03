@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:app_maui_estudo.Views.Components.HeaderView"
+             x:Class="app_maui_estudo.Views.Pages.Sobre"
+             Title="Sobre">
+    <!-- Definindo o fundo com gradiente -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#ADD8E6" Offset="0.0" />
+            <GradientStop Color="#4682B4" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Content>
+        <VerticalStackLayout>
+            <!-- Cabeçalho -->
+            <local:HeaderView />
+
+            <!-- Texto principal -->
+            <Label 
+        Text="Eai pessoal 😎! Eu sou Emmanuel, desenvolvedor de software com 3 anos de experiência. Utilizo tecnologias como C#, .NET, Xamarin, ASP.NET Web API, SQLite, MongoDB e Oracle para melhorar e criar novos projetos. Participo de um ambiente ágil com Azure DevOps para gerenciamento eficiente de projetos."
+        VerticalOptions="Start"
+        HorizontalOptions="Center"
+        FontSize="16"
+        TextColor="White"
+        Padding="20"
+        LineBreakMode="WordWrap" />
+
+            <!-- Tecnologias mais usadas -->
+            <Label 
+        Text="Tecnologias mais usadas:"
+        VerticalOptions="Start"
+        HorizontalOptions="Center"
+        FontSize="20"
+        TextColor="White"
+        Padding="10" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15">
+                <Image Source="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" HeightRequest="40" WidthRequest="40" />
+                <Image Source="https://cdn.icon-icons.com/icons2/9/PNG/128/sql_racer_gamedatabase_sql_1526.png" HeightRequest="40" WidthRequest="40" />
+                <Image Source="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/344/external-net-or-dot-net-a-software-framework-developed-by-microsoft-logo-shadow-tal-revivo.png" HeightRequest="40" WidthRequest="40" />
+                <Image Source="https://img.icons8.com/color/344/xamarin.png" HeightRequest="40" WidthRequest="40" />
+            </StackLayout>
+
+            <!-- Contatos -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="15" Padding="20">
+                <Button Text="LinkedIn" BackgroundColor="#0072b1" TextColor="White" Command="{Binding LinkedInCommand}" />
+                <Button Text="Email" BackgroundColor="#c14438" TextColor="White" Command="{Binding EmailCommand}" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

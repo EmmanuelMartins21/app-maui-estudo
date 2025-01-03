@@ -6,8 +6,6 @@
         <!-- Botão Flutuante -->
         <Button x:Name="btnFlutuante"
                 Text="+" 
-                BackgroundColor="#4682B4"
-                TextColor="White"
                 FontSize="24"
                 WidthRequest="60"
                 HeightRequest="60"

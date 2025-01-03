@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:app_maui_estudo.Views.Components.HeaderView"
              x:Class="app_maui_estudo.Views.Pages.ProtegidaPrincipal"
              Title="ProtegidaPrincipal">
+
+    <!-- Definindo o fundo com gradiente -->
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#ADD8E6" Offset="0.0" />
-            <!-- Azul Claro -->
             <GradientStop Color="#4682B4" Offset="1.0" />
-            <!-- Azul Médio -->
         </LinearGradientBrush>
     </ContentPage.Background>
 
+    <!-- Layout principal -->
     <ContentPage.Content>
-        <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Center">
-           
-            <!-- Mensagem de Boas-Vindas -->
-            <Label Text="Bem-vindo"
-                   FontSize="26"
-                   TextColor="White"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
-            
-            <Label x:Name="txt_usuario"
-                   FontSize="26"
-                   TextColor="White"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+        <Grid RowDefinitions="Auto, *, Auto" ColumnDefinitions="*">
 
-            <!-- Mensagem adicional -->
-            <Label Text="Estamos felizes em tê-lo conosco. Aproveite ao máximo o nosso app!"
-                   FontSize="18"
-                   TextColor="White"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   Margin="0,10,0,20" />
+            <!-- Cabeçalho fixo -->
+            <local:HeaderView Grid.Row="0" />
 
-            <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"
-                    Padding="10" Margin="10"
-                  RowSpacing="10" ColumnSpacing="10">
-                <!-- Botão 1 -->
-                <Button x:Name="btn_mapa" Text="Mapa"
-                Grid.Row="0" Grid.Column="0"
-                BackgroundColor="#4682B4" 
-                TextColor="White"
-                Clicked="btn_mapa_Clicked" />
+            <!-- Conteúdo principal rolável -->
+            <ScrollView Grid.Row="1" Padding="20">
+                <VerticalStackLayout Spacing="15">
+                    <!-- Mensagem de Boas-Vindas -->
+                    <Label Text="Bem-vindo"
+                           FontSize="26"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
 
-                <!-- Botão 2 -->
-                <Button x:Name="btn_galeria" Text="Selecionar fotos"
-                Grid.Row="0" Grid.Column="1"
-                BackgroundColor="LightCoral" 
-                TextColor="White"
-                Clicked="btn_galeria_Clicked" />
+                    <Label x:Name="txt_usuario"
+                           FontSize="26"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
 
-                <!-- Botão 3 --><!--
-                <Button Text="Botão 3"
-                Grid.Row="1" Grid.Column="0"
-                BackgroundColor="LightGreen" 
-                TextColor="White"
-                Clicked="OnButtonClicked" />
+                    <!-- Mensagem adicional -->
+                    <Label Text="Estamos felizes em tê-lo conosco. Aproveite ao máximo o nosso app!"
+                           FontSize="18"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,10,0,20" />
 
-                --><!-- Botão 4 --><!--
-                <Button Text="Botão 4"
-                Grid.Row="1" Grid.Column="1"
-                BackgroundColor="LightGoldenrodYellow" 
-                TextColor="Black"
-                Clicked="OnButtonClicked" />-->
-            </Grid>
+                    <!-- Botões dentro do Grid -->
+                    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"
+                          Padding="10" Margin="10"
+                          RowSpacing="10" ColumnSpacing="10">
+                        <!-- Botão 1 -->
+                        <Button x:Name="btn_mapa" Text="Mapa"
+                                Grid.Row="0" Grid.Column="0"
+                                BackgroundColor="#4682B4" 
+                                TextColor="White"
+                                Clicked="btn_mapa_Clicked" />
 
+                        <!-- Botão 2 -->
+                        <Button x:Name="btn_galeria" Text="Selecionar fotos"
+                                Grid.Row="0" Grid.Column="1"
+                                BackgroundColor="LightCoral" 
+                                TextColor="White"
+                                Clicked="btn_galeria_Clicked" />
+                    </Grid>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Botão Flutuante (fora do Grid, fixo no canto inferior direito) -->
             <AbsoluteLayout>
-                <!-- Botão Flutuante -->
                 <Button x:Name="btnSair"
                         ImageSource="icon_logout.png"
-                        BackgroundColor="#4682B4"
                         TextColor="White"
                         FontSize="24"
                         WidthRequest="60"
@@ -82,8 +78,7 @@
                         AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
                         Clicked="btnSair_Clicked"/>
             </AbsoluteLayout>
-           
 
-        </VerticalStackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

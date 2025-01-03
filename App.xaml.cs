@@ -14,7 +14,7 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-        MainPage = new ProtegidaPrincipal();
+        MainPage = new AppShell();
     }
 
     protected override void OnStart()
@@ -38,7 +38,7 @@ public partial class App : Application
         var writePermissionStatus = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
         var readPermissionStatus = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
 
-        if (writePermissionStatus != PermissionStatus.Granted || readPermissionStatus != PermissionStatus.Granted)
+        /*if (writePermissionStatus != PermissionStatus.Granted || readPermissionStatus != PermissionStatus.Granted)
         {
             var writePermission = await Permissions.RequestAsync<Permissions.StorageWrite>();
             var readPermission = await Permissions.RequestAsync<Permissions.StorageRead>();
@@ -53,7 +53,7 @@ public partial class App : Application
                 );
 
             }
-        }
+        }*/
 #endif
     }
 }

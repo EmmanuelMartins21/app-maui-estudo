@@ -1,8 +1,14 @@
-using Microsoft.Maui.Storage;
 using System.IO;
-
-
 namespace app_maui_estudo.Views.Pages;
+
+#if ANDROID
+                    using Android.App;
+                    using Android.Content;
+                    using Android.OS;
+
+                    // rootPath será um diretório privado no armazenamento principal (por exemplo: /storage/emulated/0/Android/data/com.seuprojeto/files)
+#endif
+
 
 public partial class ProtegidaPrincipal : ContentPage
 {
@@ -39,7 +45,9 @@ public partial class ProtegidaPrincipal : ContentPage
 
                 if (result != null)
                 {
-                    var rootPath = Environment.SystemDirectory;
+                    string rootPath = Application.Context.GetExternalFilesDir(null)?.AbsolutePath;
+
+
 
                     var targetFolder = Path.Combine(rootPath, "Dados", "Fotos");
 
@@ -63,13 +71,11 @@ public partial class ProtegidaPrincipal : ContentPage
                         await stream.CopyToAsync(fileStream);
                     }
 
-                    await Application.Current.MainPage.DisplayAlert("Sucesso", "Fotos armazenadas com sucesso!", "OK");
                 }
             
         }
         catch (Exception ex)
         {
-            await Application.Current.MainPage.DisplayAlert("Erro", $"Ocorreu um erro: {ex.Message}", "OK");
         }
 
     }
