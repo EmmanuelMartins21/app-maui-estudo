@@ -8,6 +8,10 @@ O objetivo deste repositório é servir como uma base de estudos, permitindo a e
 
 - Estruturas básicas de aplicativos em .NET MAUI
 - Uso de **SecureStorage** para armazenar dados de forma segura no dispositivo
+- Aplicação de navegação entre paginas usando TabBar via Shell
+- Uso de ContentPage e ContentView
+- Uso de componetes apartados
+- Uso de Intent.Extras
 
 ## Tecnologias Usadas
 
